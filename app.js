@@ -86,7 +86,7 @@ app.get("/add",(req,res)=>{
                 break;
         }
 
-    res.render("add",{head:headTitle,type:typ})
+    res.render("add",{head:headTitle,type:typ,menuCheck:postName})
     }else{
         res.redirect("/admin")
     }
