@@ -120,6 +120,6 @@ app.post("/add",upload.array('pic', 12),(req,res)=>{
     res.render("image",{image:req.files});
 })
 
-app.listen(3000,()=>{
+app.listen(3000||process.env.PORT,()=>{
     console.log("Server started at Port : 3000");
 })
