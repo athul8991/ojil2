@@ -1,0 +1,78 @@
+<%-include ('partials/adminHeader')%>
+<h3 class="heading"><%=head%></h3>
+<% console.log(head)%>
+<hr class="al-hr">
+<div class="container">
+  <form method="post" action="/add" enctype="multipart/form-data">
+  <div class="row bord">
+    
+    
+      <div class="col-xl-6">
+        <!-- ////////////////////////////////////////// COMMON TOP START /////////////////////////////// -->
+        <!-- image upload -->
+       
+        <%-include('menu/imgtitle') %>
+        <!-- iend -->
+        <!-- project Name -->
+        <%-include('menu/projectName') %>
+        <!-- project Name end -->
+        
+       <!-- description -->
+       <%-include('menu/description') %>
+
+       <!-- end -->
+        </div>
+        
+        <!-- col lft end -->
+
+        <div class="col-xl-6">
+<!-- *************************** TyPE CHANGE *****************************  -->
+          <% if(type){%>
+            <%-include('menu/type') %>
+            <%} %>
+        
+
+
+   <!-- *************************** TyPE CHANGE *****************************  -->
+        
+        <!-- listed By -->
+       <%-include('menu/listedBy') %>
+       <!-- listed by end -->
+
+       <!-- ////////////////////////////////////////// COMMON TOP END /////////////////////////////// -->
+
+       <!-- ////////////////////////////////////////// CHANGE ITEMS /////////////////////////////// -->
+       <% if(head =='lp'){ %>
+
+       <%- include('menu/plotA') %>
+
+        <%- include('menu/length') %>
+
+        <%-include('menu/bredth') %>
+      
+        
+        <%-include('menu/facing') %>
+        <% }else if(head =="sh&a"){%>
+
+          <%} %>
+
+      <!-- ////////////////////////////////////////// CHANGE ITEMS /////////////////////////////// -->
+
+       <!-- price -->
+
+       <!-- //////////////////////////////////////// COMMON BOTTOM START  ///////////////////// -->
+       <%- include('menu/price') %>
+
+        </div>
+       <%- include('menu/button') %>
+        </div>
+        </div>
+      </form>
+     
+      
+
+</div>
+<div class="foot">
+<%-include('partials/footer')%>
+</div>
+<!-- ////////////////////////////////////////// COMMON BOTTOM END /////////////////////////////// -->
