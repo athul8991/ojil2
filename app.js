@@ -86,8 +86,12 @@ app.get("/add",(req,res,next)=>{
                 break;
         }
 
+<<<<<<< HEAD
     res.render("add",{head:headTitle,type:typ,menCheck:postName})
     next(empty());
+=======
+    res.render("add",{head:headTitle,type:typ,menuCheck:postName})
+>>>>>>> dd7809433370fa83a7651fc5e672e3e4f0c573c0
     }else{
         res.redirect("/admin")
     }
@@ -132,6 +136,10 @@ app.post("/add",upload.array('pic', 12),(req,res)=>{
     res.render("image",{image:req.files});
 })
 
+<<<<<<< HEAD
 app.listen(3000 || process.env.PORT,()=>{
+=======
+app.listen(3000||process.env.PORT,()=>{
+>>>>>>> dd7809433370fa83a7651fc5e672e3e4f0c573c0
     console.log("Server started at Port : 3000");
 })
