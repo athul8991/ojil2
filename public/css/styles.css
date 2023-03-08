@@ -11433,7 +11433,7 @@ input[type=number] {
 }
 .search{
   margin-right: 1%;
-  width: 33%;
+  width: 25%;
   /* padding-left: 74px; */
 }
 .heading{
@@ -11452,3 +11452,8 @@ input[type=number] {
   margin-bottom: 1%;
   
 }
+/* .logo{
+  height: 100%;
+  width:25%;
+} */
+

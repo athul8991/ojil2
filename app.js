@@ -52,7 +52,7 @@ const head =["Land & Plot", "Sale House & Apartment","Rent House & Apartment","P
 
 let postName='';
 let headTitle='';
-app.get("/add",(req,res)=>{
+app.get("/add",(req,res,next)=>{
     let typ ='';
     if(postName){
         switch (postName) {
@@ -86,14 +86,26 @@ app.get("/add",(req,res)=>{
                 break;
         }
 
-    res.render("add",{head:headTitle,type:typ})
+    res.render("add",{head:headTitle,type:typ,menCheck:postName})
+    next(empty());
     }else{
         res.redirect("/admin")
     }
-})
+});
+
+function empty(){
+    postName='';
+    console.log("next");
+    
+}
+
+
+
 
 app.get("/cat/:postname",(req,res)=>{
+
     postName = req.params.postname;
+    console.log(postName);
     
 
     res.redirect("/add")
@@ -120,6 +132,6 @@ app.post("/add",upload.array('pic', 12),(req,res)=>{
     res.render("image",{image:req.files});
 })
 
-app.listen(3000,()=>{
+app.listen(3000 || process.env.PORT,()=>{
     console.log("Server started at Port : 3000");
 })
